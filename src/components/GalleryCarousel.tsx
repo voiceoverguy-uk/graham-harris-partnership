@@ -1,9 +1,18 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import type { GalleryImage } from "@/data/gallery";
 import LightboxModal from "./LightboxModal";
+
+function shuffle<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 function ChevronLeft() {
   return (
@@ -26,6 +35,7 @@ interface Props {
 }
 
 export default function GalleryCarousel({ images }: Props) {
+  const shuffledImages = useMemo(() => shuffle(images), [images]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
@@ -43,7 +53,7 @@ export default function GalleryCarousel({ images }: Props) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const maxIndex = Math.max(0, images.length - slidesPerView);
+  const maxIndex = Math.max(0, shuffledImages.length - slidesPerView);
 
   const prev = useCallback(() => {
     setCurrentIndex((i) => Math.max(0, i - 1));
@@ -69,7 +79,7 @@ export default function GalleryCarousel({ images }: Props) {
     }
   };
 
-  const totalPages = Math.ceil(images.length / slidesPerView);
+  const totalPages = Math.ceil(shuffledImages.length / slidesPerView);
   const currentPage = Math.floor(currentIndex / slidesPerView);
 
   return (
@@ -87,7 +97,7 @@ export default function GalleryCarousel({ images }: Props) {
               transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)`,
             }}
           >
-            {images.map((image, index) => (
+            {shuffledImages.map((image, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 px-2 cursor-pointer"
@@ -146,7 +156,7 @@ export default function GalleryCarousel({ images }: Props) {
 
       {lightboxIndex !== null && (
         <LightboxModal
-          images={images}
+          images={shuffledImages}
           currentIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}
