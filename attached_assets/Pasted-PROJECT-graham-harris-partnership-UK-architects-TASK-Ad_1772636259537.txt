@@ -1,0 +1,60 @@
+PROJECT: graham-harris-partnership (UK architects)
+
+TASK: Add basic SEO metadata + schema markup site-wide.
+
+GOAL:
+Improve SEO and eligibility for rich results using clean metadata and JSON-LD schema.
+
+BUSINESS CONTEXT:
+Graham Harris Partnership
+Architectural practice (Architects)
+Family-run business
+Location: South Leicestershire, United Kingdom
+Website sections: Home, Planning Permission, Building Regulations, Our Experience, Gallery, Contact Us
+
+IMPORTANT CONSTRAINTS:
+- Minimal changes. Do NOT refactor the app.
+- Implement once in the global layout/head so it applies to all pages.
+- Use British English spelling.
+- No fake info: do NOT invent an address or phone number.
+- We DO have these emails:
+  info@grahamharrispartnership.co.uk
+  richard@grahamharrispartnership.co.uk
+
+SEO REQUIREMENTS:
+1) Add a unique <title> and meta description per page (150–160 characters).
+   - Home: emphasize “Architects in South Leicestershire” + services
+   - Planning Permission page: planning support + drawings + submissions
+   - Building Regulations page: building regs drawings + approved inspector / local authority
+   - Our Experience: portfolio/experience
+   - Gallery: examples/projects
+   - Contact: contact info
+
+2) Add canonical URLs for each page.
+3) Add Open Graph + Twitter card tags:
+   - og:title, og:description, og:url, og:type=website
+   - twitter:card=summary_large_image
+   Use a default OG image if one exists; if not, add a placeholder path and do not break build.
+
+SCHEMA REQUIREMENTS (JSON-LD):
+Add one JSON-LD block to the site (global layout) using schema.org:
+- "@type": "Architect" (or "ProfessionalService" with additionalType)
+- name: "Graham Harris Partnership"
+- url: the site URL
+- areaServed: "South Leicestershire, United Kingdom"
+- email: "info@grahamharrispartnership.co.uk"
+- description: short factual summary of services
+- hasOfferCatalog (optional): list key services (Planning Permission, Building Regulations, Architectural Design, Measured Surveys)
+
+Do NOT include:
+- aggregateRating
+- fake reviews
+- fake geo coordinates
+- fake postal address
+- phone number (none provided)
+
+ACCEPTANCE:
+- Each page has correct title + meta description + canonical
+- Social sharing tags present
+- One valid JSON-LD schema block present and not throwing errors
+- No broken builds / no runtime errors

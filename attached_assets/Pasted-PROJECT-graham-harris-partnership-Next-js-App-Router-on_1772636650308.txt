@@ -1,0 +1,95 @@
+PROJECT: graham-harris-partnership (Next.js App Router on Vercel)
+
+OBJECTIVE:
+Make three improvements:
+1) Polished HTML email layout for enquiries (clear, professional, easy to read)
+2) Ensure ALL contact form enquiries ALWAYS go to Richard
+3) Add /robots.txt and /sitemap.xml
+
+IMPORTANT CONSTRAINTS:
+- Minimal changes. Do NOT refactor the site.
+- Keep existing form fields + UI behaviour (success/error messages).
+- Keep Resend and existing env vars (RESEND_API_KEY etc).
+- Do NOT add an address or phone number (not provided).
+
+========================
+T001: Contact route — always send to Richard + sender name
+========================
+FILE: src/app/api/contact/route.ts
+
+REQUIREMENTS:
+- Force recipient to ALWAYS be: richard@grahamharrispartnership.co.uk
+  (Do not allow user-provided toEmail, and do not use fallback logic.)
+- Set sender display name to exactly:
+  "Graham Harris Partnership Website <noreply@voiceoverguy.co.uk>"
+  (Keep the noreply domain as-is.)
+- Set Reply-To (if visitor email exists) to the visitor’s email so Richard can hit Reply.
+- Subject line should be clear and consistent, e.g.:
+  "New website enquiry – Graham Harris Partnership"
+  (Optionally include the sender name if available.)
+
+POLISHED HTML EMAIL LAYOUT:
+Replace any plain-text email body with a neat HTML template that includes:
+
+A) Header:
+- “New website enquiry”
+- Sub-line: “Graham Harris Partnership Website”
+
+B) Summary panel (table or cards):
+- Name
+- Email
+- Phone (if field exists)
+- Service / topic (if field exists)
+- Submitted date/time (server time)
+
+C) Message section:
+- The full message in a readable block (preserve line breaks)
+
+D) Footer:
+- “Submitted via grahamharrispartnership.co.uk contact form”
+
+Also include a plain text fallback (text:) version.
+
+Ensure the HTML is simple and email-client friendly (inline styles OK).
+
+ACCEPTANCE:
+- Every submission sends to richard@grahamharrispartnership.co.uk
+- Sender shown as “Graham Harris Partnership Website”
+- Reply-To set to visitor email (when provided)
+- Email format looks polished and readable
+
+========================
+T002: Add /robots.txt (allow all)
+========================
+Create a robots.txt using Next.js App Router conventions:
+
+- Add file: src/app/robots.ts
+Return:
+User-agent: *
+Allow: /
+Sitemap: https://www.grahamharrispartnership.co.uk/sitemap.xml
+
+ACCEPTANCE:
+- Visiting /robots.txt shows allow-all + sitemap URL
+
+========================
+T003: Add /sitemap.xml (basic)
+========================
+Create a sitemap using Next.js App Router conventions:
+
+- Add file: src/app/sitemap.ts
+Include these URLs (canonical domain is www):
+- https://www.grahamharrispartnership.co.uk/
+- https://www.grahamharrispartnership.co.uk/planning-permission
+- https://www.grahamharrispartnership.co.uk/building-regulations
+- https://www.grahamharrispartnership.co.uk/our-experience
+- https://www.grahamharrispartnership.co.uk/gallery
+- https://www.grahamharrispartnership.co.uk/contact
+
+Use reasonable defaults:
+- changeFrequency: "monthly"
+- priority: home 1.0, core pages 0.7–0.8
+
+ACCEPTANCE:
+- Visiting /sitemap.xml returns valid XML with those pages
+- No build errors
