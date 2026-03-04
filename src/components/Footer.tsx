@@ -1,14 +1,5 @@
 import Link from "next/link";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/planning-permission", label: "Planning Permission" },
-  { href: "/building-regulations", label: "Building Regulations" },
-  { href: "/our-experience", label: "Our Experience" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact Us" },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-gray-300 mt-auto">
@@ -36,16 +27,13 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Graham Harris Partnership
           </p>
         </div>
-        <nav className="flex flex-wrap justify-center md:justify-end gap-3 text-xs md:text-sm">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="hover:text-white transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="flex items-center text-xs md:text-sm">
+          <Link
+            href="/contact"
+            className="hover:text-white transition-colors"
+          >
+            Contact Us
+          </Link>
         </nav>
       </div>
     </footer>
