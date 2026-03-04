@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="pt-8 pb-2 text-center">
+    <header className="hidden md:block pt-8 pb-2 text-center">
       <Link href="/" className="inline-block">
         <div className="border-t-2 border-gray-800 pt-1 pb-0.5 mb-0.5">
           <div className="border-b-2 border-gray-800 pb-1">
