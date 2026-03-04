@@ -27,9 +27,18 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: "Graham Harris Partnership Ltd.",
     url: BASE_URL,
+    images: [
+      {
+        url: `${BASE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Graham Harris Partnership Ltd. – Architectural Services",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: [`${BASE_URL}/og-image.png`],
   },
   alternates: {
     canonical: BASE_URL,
