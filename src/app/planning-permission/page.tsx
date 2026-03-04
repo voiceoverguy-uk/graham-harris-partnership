@@ -1,9 +1,26 @@
 import type { Metadata } from "next";
 
+const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+
 export const metadata: Metadata = {
-  title: "Planning Permission",
+  title: "Planning Permission Services",
   description:
-    "Graham Harris Partnership provides planning permission services including pre-application consultations, co-ordination with consultants, and preparation of application drawings.",
+    "Planning permission support from Graham Harris Partnership in South Leicestershire. Pre-application consultations, drawings, and submissions to Local Authorities.",
+  alternates: {
+    canonical: `${BASE_URL}/planning-permission`,
+  },
+  openGraph: {
+    title: "Planning Permission Services | Graham Harris Partnership Ltd.",
+    description:
+      "Planning permission support in South Leicestershire. Consultations, application drawings, and submissions to Local Authorities.",
+    url: `${BASE_URL}/planning-permission`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Planning Permission Services | Graham Harris Partnership Ltd.",
+    description:
+      "Planning permission support in South Leicestershire. Consultations, application drawings, and submissions to Local Authorities.",
+  },
 };
 
 export default function PlanningPermissionPage() {

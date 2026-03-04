@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
+const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Graham Harris Partnership Ltd. for architectural services. Send us a message about your project.",
+    "Contact Graham Harris Partnership – Architects in South Leicestershire. Send us a message about your building project, extension, or planning enquiry.",
+  alternates: {
+    canonical: `${BASE_URL}/contact`,
+  },
+  openGraph: {
+    title: "Contact Us | Graham Harris Partnership Ltd.",
+    description:
+      "Get in touch with Graham Harris Partnership – Architects in South Leicestershire. Tell us about your building project or planning enquiry.",
+    url: `${BASE_URL}/contact`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Graham Harris Partnership Ltd.",
+    description:
+      "Get in touch with Graham Harris Partnership – Architects in South Leicestershire. Tell us about your building project or planning enquiry.",
+  },
 };
 
 export default function ContactPage() {

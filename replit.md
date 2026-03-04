@@ -1,12 +1,12 @@
 # Graham Harris Partnership Ltd. — Website
 
 ## Overview
-Professional brochure website for Graham Harris Partnership Ltd., an architectural services company. Built with Next.js (App Router), TypeScript, and Tailwind CSS.
+Professional brochure website for Graham Harris Partnership Ltd., an architectural services company based in South Leicestershire. Built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
 ## Tech Stack
 - **Framework**: Next.js 16 (App Router) with TypeScript
 - **Styling**: Tailwind CSS 4
-- **Email**: Resend (for contact form)
+- **Email**: Resend (for contact form, sends polished HTML emails)
 - **Typography**: Century Gothic (primary), Montserrat (Google Fonts fallback)
 
 ## Pages
@@ -17,19 +17,29 @@ Professional brochure website for Graham Harris Partnership Ltd., an architectur
 - `/gallery` — Featured Projects carousel with lightbox
 - `/contact` — Contact form (sends email via Resend)
 
+## SEO
+- Unique title + meta description per page
+- Canonical URLs using https://www.grahamharrispartnership.co.uk
+- Open Graph + Twitter card tags per page
+- JSON-LD schema markup (@type "Architect") in layout
+- `/robots.txt` — allows all crawlers, references sitemap
+- `/sitemap.xml` — lists all 6 pages with priorities
+
 ## Project Structure
 ```
 src/
 ├── app/
-│   ├── api/contact/route.ts    # Contact form API (Resend)
+│   ├── api/contact/route.ts    # Contact form API (Resend, HTML email)
 │   ├── building-regulations/
 │   ├── contact/
 │   ├── gallery/
 │   ├── our-experience/
 │   ├── planning-permission/
 │   ├── globals.css
-│   ├── layout.tsx              # Root layout with Header/Nav/Footer
-│   └── page.tsx                # Home page
+│   ├── layout.tsx              # Root layout with Header/Nav/Footer + JSON-LD
+│   ├── page.tsx                # Home page
+│   ├── robots.ts               # /robots.txt
+│   └── sitemap.ts              # /sitemap.xml
 ├── components/
 │   ├── ContactForm.tsx
 │   ├── Footer.tsx
@@ -52,14 +62,16 @@ public/
 
 ## Environment Variables
 - `RESEND_API_KEY` — Secret, required for contact form email sending
-- `CONTACT_TO_EMAIL` — Recipient email (default: info@grahamharrispartnership.co.uk)
 - `CONTACT_FROM_EMAIL` — Sender email (default: noreply@grahamharrispartnership.co.uk)
 
 ## Contact Form
+- All submissions always go to richard@grahamharrispartnership.co.uk (hardcoded)
+- Sender name: "Graham Harris Partnership Website"
 - Fields: Name, Email, Message (all required)
 - Honeypot spam protection (hidden "company" field)
 - Rate limiting: 5 requests per minute per IP
-- Sends via Resend API route at `/api/contact`
+- Sends polished HTML email with plain text fallback via Resend
+- Reply-To set to visitor's email address
 
 ## Development
 ```

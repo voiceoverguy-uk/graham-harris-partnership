@@ -1,9 +1,26 @@
 import type { Metadata } from "next";
 
+const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+
 export const metadata: Metadata = {
-  title: "Building Regulations",
+  title: "Building Regulations Services",
   description:
-    "Graham Harris Partnership provides building regulations services including specification of new building works, co-ordination with consultants, and preparation of application documents.",
+    "Building regulations drawings and submissions by Graham Harris Partnership in South Leicestershire. Specification, co-ordination with consultants, and Local Authority approval.",
+  alternates: {
+    canonical: `${BASE_URL}/building-regulations`,
+  },
+  openGraph: {
+    title: "Building Regulations Services | Graham Harris Partnership Ltd.",
+    description:
+      "Building regulations drawings and submissions in South Leicestershire. Specification, consultant co-ordination, and Local Authority approval.",
+    url: `${BASE_URL}/building-regulations`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Building Regulations Services | Graham Harris Partnership Ltd.",
+    description:
+      "Building regulations drawings and submissions in South Leicestershire. Specification, consultant co-ordination, and Local Authority approval.",
+  },
 };
 
 export default function BuildingRegulationsPage() {

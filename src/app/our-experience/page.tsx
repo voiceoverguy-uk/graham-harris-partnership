@@ -1,9 +1,26 @@
 import type { Metadata } from "next";
 
+const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+
 export const metadata: Metadata = {
   title: "Our Experience",
   description:
-    "Graham Harris Partnership has extensive experience in creative house extensions, new houses, barn conversions, listed buildings, and more.",
+    "Graham Harris Partnership – experienced architects in South Leicestershire. Extensions, new houses, barn conversions, listed buildings, loft conversions, and commercial projects.",
+  alternates: {
+    canonical: `${BASE_URL}/our-experience`,
+  },
+  openGraph: {
+    title: "Our Experience | Graham Harris Partnership Ltd.",
+    description:
+      "Experienced architects in South Leicestershire. Extensions, new houses, barn conversions, listed buildings, loft conversions, and commercial projects.",
+    url: `${BASE_URL}/our-experience`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Experience | Graham Harris Partnership Ltd.",
+    description:
+      "Experienced architects in South Leicestershire. Extensions, new houses, barn conversions, listed buildings, loft conversions, and commercial projects.",
+  },
 };
 
 export default function OurExperiencePage() {
