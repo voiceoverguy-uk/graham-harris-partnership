@@ -57,9 +57,7 @@ export default function HomePage() {
       </ul>
 
       <p className="text-gray-700 mb-6">
-        Please contact Graham Harris Partnership,{" "}
-        <strong>Graham</strong> or <strong>Richard Harris</strong> to discuss
-        your proposal.
+        Please contact Graham or Richard Harris to discuss your proposal.
       </p>
 
       <h2 className="text-lg text-gray-600 mb-4">Our Aim</h2>
