@@ -103,11 +103,6 @@ export default function GalleryCarousel({ images }: Props) {
                     sizes={`(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw`}
                   />
                 </div>
-                {image.caption && (
-                  <p className="text-sm text-gray-500 mt-2 text-center">
-                    {image.caption}
-                  </p>
-                )}
               </div>
             ))}
           </div>
