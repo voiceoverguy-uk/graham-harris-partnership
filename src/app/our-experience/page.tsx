@@ -27,7 +27,7 @@ export default function OurExperiencePage() {
   return (
     <article>
       <h1 className="text-2xl md:text-3xl font-bold text-gray-700 mb-8">
-        Architectural Project Experience
+        Our Experience Includes:
       </h1>
       <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
         <li>Creative house extension designs and full building re-modelling.</li>

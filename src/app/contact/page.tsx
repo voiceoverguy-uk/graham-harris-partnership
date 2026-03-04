@@ -28,7 +28,7 @@ export default function ContactPage() {
   return (
     <article>
       <h1 className="text-2xl md:text-3xl font-bold text-gray-700 mb-6">
-        Contact Graham Harris Partnership
+        Contact Us:
       </h1>
       <p className="text-gray-700 mb-8">
         Please send an email with your details and a brief description

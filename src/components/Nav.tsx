@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/architects-south-leicestershire", label: "About Us" },
   { href: "/planning-permission", label: "Planning Permission" },
   { href: "/building-regulations", label: "Building Regulations" },
   { href: "/our-experience", label: "Our Experience" },
