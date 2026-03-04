@@ -38,13 +38,16 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Architect",
+  "@type": "ProfessionalService",
   name: "Graham Harris Partnership",
-  url: BASE_URL,
+  url: "https://www.grahamharrispartnership.co.uk/",
   email: "info@grahamharrispartnership.co.uk",
   description:
-    "Architects in South Leicestershire providing professional architectural services including planning permission, building regulations, architectural design, and measured surveys.",
-  areaServed: "South Leicestershire, United Kingdom",
+    "Family-run architectural practice in South Leicestershire providing planning permission drawings, building regulations drawings, architectural design and measured surveys.",
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "South Leicestershire, United Kingdom",
+  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Architectural Services",
@@ -53,14 +56,14 @@ const jsonLd = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Planning Permission",
+          name: "Planning Permission Drawings",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Building Regulations",
+          name: "Building Regulations Drawings",
         },
       },
       {
