@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Century Gothic", "Montserrat", sans-serif;
+  --font-body: "Century Gothic", "Montserrat", sans-serif;
+}
+
+body {
+  font-family: "Century Gothic", "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
