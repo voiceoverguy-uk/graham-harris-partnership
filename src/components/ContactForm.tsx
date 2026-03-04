@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -9,6 +9,13 @@ export default function ContactForm() {
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if (status === "success") {
+      const timer = setTimeout(() => setStatus("idle"), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
