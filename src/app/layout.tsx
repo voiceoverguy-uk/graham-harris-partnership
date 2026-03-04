@@ -17,8 +17,8 @@ const BASE_URL = "https://www.grahamharrispartnership.co.uk";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Architects in South Leicestershire | Graham Harris Partnership Ltd.",
-    template: "%s | Graham Harris Partnership Ltd.",
+    default: "Graham Harris Partnership",
+    template: "%s | Graham Harris Partnership",
   },
   description:
     "Graham Harris Partnership Ltd. – Architects in South Leicestershire offering planning permission, building regulations, architectural design, and measured surveys.",

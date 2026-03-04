@@ -3,21 +3,21 @@ import type { Metadata } from "next";
 const BASE_URL = "https://www.grahamharrispartnership.co.uk";
 
 export const metadata: Metadata = {
-  title: "Architects in South Leicestershire | Graham Harris Partnership Ltd.",
+  title: "Graham Harris Partnership",
   description:
     "Graham Harris Partnership – Architects in South Leicestershire. Planning permission, building regulations, architectural drawings, and design consultation for residential and commercial projects.",
   alternates: {
     canonical: `${BASE_URL}/`,
   },
   openGraph: {
-    title: "Architects in South Leicestershire | Graham Harris Partnership Ltd.",
+    title: "Graham Harris Partnership",
     description:
       "Professional architectural services in South Leicestershire including planning permission, building regulations, and design consultation.",
     url: `${BASE_URL}/`,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Architects in South Leicestershire | Graham Harris Partnership Ltd.",
+    title: "Graham Harris Partnership",
     description:
       "Professional architectural services in South Leicestershire including planning permission, building regulations, and design consultation.",
   },
