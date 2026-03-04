@@ -14,8 +14,9 @@ export default function ContactPage() {
         Contact Us:
       </h1>
       <p className="text-gray-700 mb-8">
-        Please send an email with your details and a brief description of your
-        potential project and we will get back to you.
+        Please send an email with your details and a brief description
+        <br />
+        of your potential project and we will get back to you.
       </p>
       <ContactForm />
     </article>
