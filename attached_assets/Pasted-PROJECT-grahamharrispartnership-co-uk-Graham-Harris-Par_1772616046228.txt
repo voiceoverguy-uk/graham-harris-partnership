@@ -1,0 +1,116 @@
+PROJECT: grahamharrispartnership.co.uk – Graham Harris Partnership Ltd (Architectural Services)
+
+GOAL:
+Rebuild the current simple WordPress brochure site as a fast, clean, minimal Next.js site ready for Vercel.
+Keep the same overall look/structure as the existing website (centred wordmark, simple nav, big headings, bullet lists, dark footer),
+but modernise the Gallery and add a working Contact form (Resend).
+
+DOMAIN:
+grahamharrispartnership.co.uk
+
+TECH / CONSTRAINTS:
+- Next.js (App Router) + TypeScript, suitable for Vercel deployment
+- Tailwind CSS
+- Minimal dependencies
+- No CMS for now
+- Simple, professional, lots of whitespace (do NOT over-design)
+
+NAV / PAGES:
+1) Home (/)
+2) Planning Permission (/planning-permission)
+3) Building Regulations (/building-regulations)
+4) Our Experience (/our-experience)
+5) Gallery (/gallery)
+6) Contact Us (/contact)
+
+DESIGN DIRECTION (match existing):
+- White background, lots of whitespace
+- Centred wordmark header:
+  "GRAHAM HARRIS PARTNERSHIP Ltd."
+  Subheading: "ARCHITECTURAL SERVICES"
+  Add subtle horizontal lines above/below to echo the current style
+- Centred navigation under logo with active underline
+- Big simple H1 in grey/charcoal
+- Bullet-list content similar to current pages
+- Footer: dark grey bar, small logo/text left, nav links right
+
+CONTENT:
+Use placeholder text based on the existing structure:
+- Home: "Architectural Services including:" bullets + "Our Aim" bullets
+- Planning Permission: bullets + "Various applications including:" bullets
+- Building Regulations: short bullets (3 items)
+- Our Experience: longer bullet list (similar to current)
+- Contact: short intro paragraph + contact form (no phone number)
+
+GALLERY (modern, not a wall of pictures):
+- Build a "Featured Projects" carousel on /gallery (responsive, touch-friendly)
+- Use a clean modern carousel with:
+  - arrows + swipe
+  - pagination dots
+  - shows 1 on mobile, 2 on tablet, 3 on desktop
+- Images live in /public/gallery and are listed in /src/data/gallery.ts
+- Clicking any slide opens a lightbox modal:
+  - next/previous
+  - Esc closes
+  - arrow keys navigate
+  - optional caption
+- Keep the gallery curated: assume ~6–12 images initially (not dozens)
+
+CONTACT FORM (Resend):
+Recipient email (TO):
+- info@grahamharrispartnership.co.uk
+
+Sender email (FROM):
+- noreply@grahamharrispartnership.co.uk
+NOTE: This requires verifying the grahamharrispartnership.co.uk domain in Resend via DNS records. Do not hardcode keys.
+
+Form fields:
+- Name (required)
+- Email (required)
+- Message (required)
+(No phone number field)
+
+Spam protection:
+- Honeypot hidden field (e.g. "company"); reject if filled
+- Basic rate limit per IP (simple in-memory throttle is fine)
+
+Validation:
+- required checks
+- email format check
+- sensible length limits
+
+Backend:
+- Next.js route handler: /app/api/contact/route.ts
+- POST JSON, send via Resend, return success/error
+Frontend:
+- Contact form calls the endpoint and shows clear success/error message inline.
+
+ENV VARS:
+RESEND_API_KEY=...
+CONTACT_TO_EMAIL=info@grahamharrispartnership.co.uk
+CONTACT_FROM_EMAIL=noreply@grahamharrispartnership.co.uk
+
+SEO BASICS:
+- metadata per page (title + description)
+- Open Graph defaults
+- favicon placeholder
+
+STRUCTURE:
+- shared layout with Header/Nav/Footer
+- reusable components:
+  Header, Nav, Footer, Container
+  GalleryCarousel, LightboxModal
+  ContactForm
+
+DELIVERABLES:
+- Working Next.js site in Replit preview
+- Carousel gallery + lightbox works
+- Contact form sends email via Resend and shows success/error
+- README with:
+  - how to add gallery images
+  - env vars
+  - deploy steps for Vercel
+
+IMPORTANT:
+Keep it minimal and similar to the existing site’s feel. Modernise only gallery + form UX.
+Avoid heavy animations/gimmicks.
