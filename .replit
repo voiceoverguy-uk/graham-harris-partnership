@@ -47,5 +47,5 @@ externalPort = 80
 [userenv]
 
 [userenv.shared]
-CONTACT_TO_EMAIL = "info@grahamharrispartnership.co.uk"
+CONTACT_TO_EMAIL = "richard@grahamharrispartnership.co.uk"
 CONTACT_FROM_EMAIL = "noreply@grahamharrispartnership.co.uk"

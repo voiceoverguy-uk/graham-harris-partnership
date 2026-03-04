@@ -37,7 +37,6 @@ export default function PlanningPermissionPage() {
         <li>Householder applications</li>
         <li>Change of use development for buildings and land</li>
         <li>Listed Building Consent</li>
-        <li>Conservation Area Consent</li>
         <li>Retrospective Planning Applications</li>
         <li>Planning Appeals</li>
       </ul>
