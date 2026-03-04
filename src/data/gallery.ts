@@ -7,7 +7,7 @@ export interface GalleryImage {
 export const galleryImages: GalleryImage[] = Array.from(
   { length: 49 },
   (_, i) => ({
-    src: `/gallery/project-${String(i + 1).padStart(2, "0")}.jpg`,
+    src: `/gallery/GHP-${String(i + 1).padStart(2, "0")}.jpg`,
     alt: `Project ${i + 1}`,
     caption: `Project ${i + 1}`,
   })
