@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 export default function PlanningPermissionPage() {
   return (
     <article>
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-700 mb-8">
-        Planning Permission
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-700 mb-8">
+        Planning Permission Drawings in South Leicestershire
       </h1>
 
       <h2 className="font-bold text-gray-700 mb-4">Our service includes:</h2>

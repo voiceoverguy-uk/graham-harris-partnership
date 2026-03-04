@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <article>
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-700 mb-6">
-        Architectural Services including:
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-700 mb-6">
+        Architectural Services in South Leicestershire
       </h1>
       <p className="text-gray-700 mb-8">
         Graham Harris Partnership is a family-run architectural practice based
