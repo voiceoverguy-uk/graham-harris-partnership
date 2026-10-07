@@ -5,15 +5,6 @@ import Image from "next/image";
 import type { GalleryImage } from "@/data/gallery";
 import LightboxModal from "./LightboxModal";
 
-function shuffle<T>(array: T[]): T[] {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
 function ChevronLeft() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -35,16 +26,12 @@ interface Props {
 }
 
 export default function GalleryCarousel({ images }: Props) {
-  const [displayImages, setDisplayImages] = useState(images);
+  const displayImages = images;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
-
-  useEffect(() => {
-    setDisplayImages(shuffle(images));
-  }, [images]);
 
   useEffect(() => {
     function handleResize() {
@@ -109,13 +96,17 @@ export default function GalleryCarousel({ images }: Props) {
                 onClick={() => setLightboxIndex(index)}
               >
                 <div className="relative aspect-[4/3] bg-gray-100 rounded overflow-hidden">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                    sizes={`(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw`}
-                  />
+                  {index >= currentIndex - 1 && index <= currentIndex + slidesPerView && (
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading={index === 0 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : undefined}
+                    />
+                  )}
                 </div>
               </div>
             ))}

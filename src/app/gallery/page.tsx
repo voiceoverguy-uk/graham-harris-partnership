@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { connection } from "next/server";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import { galleryImages } from "@/data/gallery";
 import { BASE_URL, BUSINESS_ID, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
@@ -37,7 +38,16 @@ const jsonLd = {
   about: { "@id": BUSINESS_ID },
 };
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  // Shuffle during the request so the first image is already present in the
+  // initial HTML and stays the same during hydration.
+  await connection();
+  const shuffledImages = [...galleryImages];
+  for (let i = shuffledImages.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledImages[i], shuffledImages[j]] = [shuffledImages[j], shuffledImages[i]];
+  }
+
   return (
     <>
       <script
@@ -48,7 +58,7 @@ export default function GalleryPage() {
         <h1 className="text-2xl md:text-3xl font-bold text-gray-700 mb-8">
           Architectural Projects and Design Examples
         </h1>
-        <GalleryCarousel images={galleryImages} />
+        <GalleryCarousel images={shuffledImages} />
       </article>
     </>
   );
