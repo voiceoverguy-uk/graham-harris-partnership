@@ -4,6 +4,21 @@ export const BASE_URL = "https://www.grahamharrispartnership.co.uk";
 export const BUSINESS_ID = `${BASE_URL}/#business`;
 export const WEBSITE_ID = `${BASE_URL}/#website`;
 
+// Confirmed by the business for public use. Share these values with the
+// contact page so structured data and visitor-facing information stay aligned.
+export const businessContact = {
+  telephone: "+441162752275",
+  telephoneDisplay: "0116 275 2275",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "11 Ridgeway",
+    addressLocality: "Littlethorpe",
+    addressRegion: "Leicestershire",
+    postalCode: "LE19 2JJ",
+    addressCountry: "GB",
+  },
+};
+
 // Page metadata replaces nested metadata objects, so pages must explicitly
 // include these defaults rather than relying on the root layout's images.
 export const sharedOpenGraph = {
@@ -37,14 +52,11 @@ export const siteJsonLd = {
       logo: `${BASE_URL}/icon.png`,
       image: `${BASE_URL}/og-image.png`,
       email: "info@grahamharrispartnership.co.uk",
+      telephone: businessContact.telephone,
       description:
         "Graham Harris Partnership provides architectural services in South Leicestershire, including planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
-      // Only verified address details are included. Do not infer a street address.
-      address: {
-        "@type": "PostalAddress",
-        postalCode: "LE19 2JJ",
-        addressCountry: "GB",
-      },
+      address: businessContact.address,
+      // Omit sameAs until genuine business profiles are supplied and approved.
       areaServed: [
         {
           "@type": "AdministrativeArea",
@@ -57,6 +69,7 @@ export const siteJsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         email: "info@grahamharrispartnership.co.uk",
+        telephone: businessContact.telephone,
         contactType: "customer service",
         areaServed: "GB",
         availableLanguage: "English",

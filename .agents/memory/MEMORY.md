@@ -1,2 +1,3 @@
 - [SEO terminology](seo-terminology.md) — Do not describe the business or its people as architects; “architectural services” is acceptable.
 - [Temporary profiling ports](profiling-ports.md) — Temporary test servers can leave persistent Replit port mappings; verify cleanup after stopping them.
+- [Public business details](public-business-details.md) — Verify publication approval, distinguish registered offices, and align contact schema with visible details.
