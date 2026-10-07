@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-import { BASE_URL, BUSINESS_ID, businessContact, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
+import { BASE_URL, BUSINESS_ID, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -52,28 +52,6 @@ export default function ContactPage() {
           <br />
           of your potential project and we will get back to you.
         </p>
-        <div className="text-gray-700 mb-8">
-          <p className="mb-3">
-            Telephone:{" "}
-            <a
-              href={`tel:${businessContact.telephone}`}
-              className="underline hover:text-gray-900"
-            >
-              {businessContact.telephoneDisplay}
-            </a>
-          </p>
-          <address className="not-italic">
-            {businessContact.address.streetAddress}
-            <br />
-            {businessContact.address.addressLocality}
-            <br />
-            {businessContact.address.addressRegion}
-            <br />
-            {businessContact.address.postalCode}
-            <br />
-            United Kingdom
-          </address>
-        </div>
         <ContactForm />
       </article>
     </>
