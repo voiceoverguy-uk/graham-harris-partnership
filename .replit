@@ -53,3 +53,7 @@ externalPort = 3000
 [userenv.shared]
 CONTACT_TO_EMAIL = "richard@grahamharrispartnership.co.uk"
 CONTACT_FROM_EMAIL = "noreply@grahamharrispartnership.co.uk"
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 180000
