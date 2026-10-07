@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { BASE_URL, sharedOpenGraph, sharedTwitter, siteJsonLd } from "@/lib/seo";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -11,8 +12,6 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   display: "swap",
 });
-
-const BASE_URL = "https://www.grahamharrispartnership.co.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -23,73 +22,12 @@ export const metadata: Metadata = {
   description:
     "Graham Harris Partnership Ltd. provides architectural services in South Leicestershire, including planning permission, building regulations, architectural design, and measured surveys.",
   openGraph: {
-    type: "website",
-    locale: "en_GB",
-    siteName: "Graham Harris Partnership Ltd.",
+    ...sharedOpenGraph,
     url: BASE_URL,
-    images: [
-      {
-        url: `${BASE_URL}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Graham Harris Partnership Ltd. – Architectural Services",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    images: [`${BASE_URL}/og-image.png`],
-  },
+  twitter: sharedTwitter,
   alternates: {
     canonical: BASE_URL,
-  },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Graham Harris Partnership",
-  url: "https://www.grahamharrispartnership.co.uk/",
-  email: "info@grahamharrispartnership.co.uk",
-  description:
-    "Graham Harris Partnership provides architectural services in South Leicestershire, including planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
-  areaServed: {
-    "@type": "AdministrativeArea",
-    name: "South Leicestershire, United Kingdom",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Architectural Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Planning Permission Drawings",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Building Regulations Drawings",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Architectural Design",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Measured Surveys",
-        },
-      },
-    ],
   },
 };
 
@@ -103,7 +41,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-white text-gray-800">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
         <Header />
         <Nav />

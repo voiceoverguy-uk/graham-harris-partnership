@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-
-const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+import { BASE_URL, BUSINESS_ID, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Our Experience",
@@ -10,13 +9,14 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/our-experience`,
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: "Our Experience | Graham Harris Partnership Ltd.",
     description:
       "Explore our architectural services and project experience in South Leicestershire, from home extensions and new homes to listed buildings and commercial projects.",
     url: `${BASE_URL}/our-experience`,
   },
   twitter: {
-    card: "summary_large_image",
+    ...sharedTwitter,
     title: "Our Experience | Graham Harris Partnership Ltd.",
     description:
       "Explore our architectural services and project experience in South Leicestershire, from home extensions and new homes to listed buildings and commercial projects.",
@@ -32,31 +32,7 @@ const jsonLd = {
   description:
     "Graham Harris Partnership has extensive experience delivering architectural services in South Leicestershire, including house extensions, new homes, barn conversions, listed buildings, loft conversions, and domestic and commercial projects.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
-  about: {
-    "@type": "ProfessionalService",
-    name: "Graham Harris Partnership",
-    url: BASE_URL,
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "South Leicestershire, United Kingdom",
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Project Types",
-      itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "House extensions and building remodelling" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "New houses" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Loft conversions" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Barn conversions" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Listed building works and conservation areas" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Domestic garage and outbuilding conversions" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Porches and conservatories" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Change of use for buildings and land" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Disabled Facility Grant adaptations" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Refurbishment and conversion of commercial premises" } },
-      ],
-    },
-  },
+  about: { "@id": BUSINESS_ID },
 };
 
 export default function OurExperiencePage() {

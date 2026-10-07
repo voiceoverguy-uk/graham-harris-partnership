@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-
-const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+import { BASE_URL, BUSINESS_ID, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Graham Harris Partnership",
@@ -10,13 +9,14 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/`,
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: "Graham Harris Partnership",
     description:
       "Professional architectural services in South Leicestershire, including planning permission, building regulations, and design consultation.",
     url: `${BASE_URL}/`,
   },
   twitter: {
-    card: "summary_large_image",
+    ...sharedTwitter,
     title: "Graham Harris Partnership",
     description:
       "Professional architectural services in South Leicestershire, including planning permission, building regulations, and design consultation.",
@@ -32,28 +32,7 @@ const jsonLd = {
   description:
     "Graham Harris Partnership provides architectural services in South Leicestershire, including planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
-  about: {
-    "@type": "ProfessionalService",
-    name: "Graham Harris Partnership",
-    url: BASE_URL,
-    email: "info@grahamharrispartnership.co.uk",
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "South Leicestershire, United Kingdom",
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Architectural Services",
-      itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Advice and consultation on project requirements" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Building design advice" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Measured surveys" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Architectural drawings for alterations, extensions and new houses" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Planning Permission applications" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Building Regulations approval" } },
-      ],
-    },
-  },
+  about: { "@id": BUSINESS_ID },
 };
 
 export default function HomePage() {

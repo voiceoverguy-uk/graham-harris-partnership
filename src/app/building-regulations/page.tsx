@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-
-const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+import { BASE_URL, BUSINESS_ID, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Building Regulations Services",
@@ -10,13 +9,14 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/building-regulations`,
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: "Building Regulations Services | Graham Harris Partnership Ltd.",
     description:
       "Building regulations drawings and submissions in South Leicestershire. Specification, consultant co-ordination, and Local Authority approval.",
     url: `${BASE_URL}/building-regulations`,
   },
   twitter: {
-    card: "summary_large_image",
+    ...sharedTwitter,
     title: "Building Regulations Services | Graham Harris Partnership Ltd.",
     description:
       "Building regulations drawings and submissions in South Leicestershire. Specification, consultant co-ordination, and Local Authority approval.",
@@ -31,15 +31,7 @@ const jsonLd = {
   url: `${BASE_URL}/building-regulations`,
   description:
     "Graham Harris Partnership prepares building regulations drawings and submissions for Local Authority and Approved Inspector approval across South Leicestershire, including specification of works and co-ordination with specialist consultants.",
-  provider: {
-    "@type": "ProfessionalService",
-    name: "Graham Harris Partnership",
-    url: BASE_URL,
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "South Leicestershire, United Kingdom",
-    },
-  },
+  provider: { "@id": BUSINESS_ID },
   serviceType: "Building Regulations",
   areaServed: {
     "@type": "AdministrativeArea",

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import { galleryImages } from "@/data/gallery";
-
-const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+import { BASE_URL, BUSINESS_ID, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Gallery – Architectural Projects",
@@ -12,13 +11,14 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/gallery`,
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: "Gallery – Architectural Projects | Graham Harris Partnership Ltd.",
     description:
       "Browse architectural projects in South Leicestershire. House extensions, new builds, barn conversions, listed buildings, and more.",
     url: `${BASE_URL}/gallery`,
   },
   twitter: {
-    card: "summary_large_image",
+    ...sharedTwitter,
     title: "Gallery – Architectural Projects | Graham Harris Partnership Ltd.",
     description:
       "Browse architectural projects in South Leicestershire. House extensions, new builds, barn conversions, listed buildings, and more.",
@@ -34,15 +34,7 @@ const jsonLd = {
   description:
     "A gallery of architectural projects completed by Graham Harris Partnership in South Leicestershire, including house extensions, new builds, barn conversions, listed buildings, and residential design examples.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
-  about: {
-    "@type": "ProfessionalService",
-    name: "Graham Harris Partnership",
-    url: BASE_URL,
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "South Leicestershire, United Kingdom",
-    },
-  },
+  about: { "@id": BUSINESS_ID },
 };
 
 export default function GalleryPage() {

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-
-const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+import { BASE_URL, BUSINESS_ID, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -11,13 +10,14 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/contact`,
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: "Contact Us | Graham Harris Partnership Ltd.",
     description:
       "Get in touch with Graham Harris Partnership about architectural services in South Leicestershire. Tell us about your building project or planning enquiry.",
     url: `${BASE_URL}/contact`,
   },
   twitter: {
-    card: "summary_large_image",
+    ...sharedTwitter,
     title: "Contact Us | Graham Harris Partnership Ltd.",
     description:
       "Get in touch with Graham Harris Partnership about architectural services in South Leicestershire. Tell us about your building project or planning enquiry.",
@@ -33,23 +33,7 @@ const jsonLd = {
   description:
     "Contact Graham Harris Partnership about architectural services in South Leicestershire, building projects, extensions, planning permission, or building regulations.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
-  about: {
-    "@type": "ProfessionalService",
-    name: "Graham Harris Partnership",
-    url: BASE_URL,
-    email: "info@grahamharrispartnership.co.uk",
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "South Leicestershire, United Kingdom",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "info@grahamharrispartnership.co.uk",
-      contactType: "customer service",
-      areaServed: "GB",
-      availableLanguage: "English",
-    },
-  },
+  about: { "@id": BUSINESS_ID },
 };
 
 export default function ContactPage() {

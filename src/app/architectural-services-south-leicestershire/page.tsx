@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
-const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+import { BASE_URL, BUSINESS_ID, sharedOpenGraph, sharedTwitter } from "@/lib/seo";
 const PAGE_URL = `${BASE_URL}/architectural-services-south-leicestershire`;
 
 export const metadata: Metadata = {
@@ -12,13 +11,14 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
+    ...sharedOpenGraph,
     title: "Architectural Services in South Leicestershire | Graham Harris Partnership Ltd.",
     description:
       "Family-run architectural services in South Leicestershire, including planning permission drawings, building regulations, architectural design, and measured surveys.",
     url: PAGE_URL,
   },
   twitter: {
-    card: "summary_large_image",
+    ...sharedTwitter,
     title: "Architectural Services in South Leicestershire | Graham Harris Partnership Ltd.",
     description:
       "Family-run architectural services in South Leicestershire, including planning permission drawings, building regulations, architectural design, and measured surveys.",
@@ -34,37 +34,7 @@ const jsonLd = {
   description:
     "Graham Harris Partnership provides architectural services across South Leicestershire, including Market Harborough, Lutterworth, Oadby, Wigston, Blaby, and Hinckley.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
-  about: {
-    "@type": "ProfessionalService",
-    name: "Graham Harris Partnership",
-    url: BASE_URL,
-    email: "info@grahamharrispartnership.co.uk",
-    description:
-      "Architectural services in South Leicestershire, including planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
-    areaServed: [
-      { "@type": "City", name: "Market Harborough" },
-      { "@type": "City", name: "Lutterworth" },
-      { "@type": "City", name: "Oadby" },
-      { "@type": "City", name: "Wigston" },
-      { "@type": "City", name: "Blaby" },
-      { "@type": "City", name: "Hinckley" },
-      { "@type": "AdministrativeArea", name: "South Leicestershire, United Kingdom" },
-    ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Architectural Services in South Leicestershire",
-      itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Planning Permission Drawings" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Building Regulations Drawings" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Architectural Design" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Measured Surveys" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "House Extensions" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Loft Conversions" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "New Homes" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Barn Conversions" } },
-      ],
-    },
-  },
+  about: { "@id": BUSINESS_ID },
 };
 
 export default function ArchitecturalServicesSouthLeicestershirePage() {
