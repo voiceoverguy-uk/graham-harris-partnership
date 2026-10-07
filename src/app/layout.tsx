@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Graham Harris Partnership",
   },
   description:
-    "Graham Harris Partnership Ltd. – Architects in South Leicestershire offering planning permission, building regulations, architectural design, and measured surveys.",
+    "Graham Harris Partnership Ltd. provides architectural services in South Leicestershire, including planning permission, building regulations, architectural design, and measured surveys.",
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -52,7 +52,7 @@ const jsonLd = {
   url: "https://www.grahamharrispartnership.co.uk/",
   email: "info@grahamharrispartnership.co.uk",
   description:
-    "Family-run architectural practice in South Leicestershire providing planning permission drawings, building regulations drawings, architectural design and measured surveys.",
+    "Graham Harris Partnership provides architectural services in South Leicestershire, including planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
   areaServed: {
     "@type": "AdministrativeArea",
     name: "South Leicestershire, United Kingdom",

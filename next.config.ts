@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         destination: "/contact",
         permanent: true,
       },
+      {
+        source: "/architects-south-leicestershire",
+        destination: "/architectural-services-south-leicestershire",
+        permanent: true,
+      },
     ];
   },
 };

@@ -16,7 +16,7 @@ Professional brochure website for Graham Harris Partnership Ltd., an architectur
 - `/our-experience` — Experience & project types
 - `/gallery` — Featured Projects carousel with lightbox
 - `/contact` — Contact form (sends email via Resend)
-- `/architects-south-leicestershire` — SEO landing page (location-targeted)
+- `/architectural-services-south-leicestershire` — location-targeted architectural services page
 
 ## SEO
 - Unique title + meta description per page
@@ -37,7 +37,7 @@ src/
 │   ├── gallery/
 │   ├── our-experience/
 │   ├── planning-permission/
-│   ├── architects-south-leicestershire/
+│   ├── architectural-services-south-leicestershire/
 │   ├── globals.css
 │   ├── layout.tsx              # Root layout with Header/Nav/Footer + JSON-LD
 │   ├── page.tsx                # Home page

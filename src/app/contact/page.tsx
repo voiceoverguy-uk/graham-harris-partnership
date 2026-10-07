@@ -6,21 +6,21 @@ const BASE_URL = "https://www.grahamharrispartnership.co.uk";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Graham Harris Partnership – Architects in South Leicestershire. Send us a message about your building project, extension, or planning enquiry.",
+    "Contact Graham Harris Partnership about architectural services in South Leicestershire. Discuss your building project, extension, or planning enquiry.",
   alternates: {
     canonical: `${BASE_URL}/contact`,
   },
   openGraph: {
     title: "Contact Us | Graham Harris Partnership Ltd.",
     description:
-      "Get in touch with Graham Harris Partnership – Architects in South Leicestershire. Tell us about your building project or planning enquiry.",
+      "Get in touch with Graham Harris Partnership about architectural services in South Leicestershire. Tell us about your building project or planning enquiry.",
     url: `${BASE_URL}/contact`,
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact Us | Graham Harris Partnership Ltd.",
     description:
-      "Get in touch with Graham Harris Partnership – Architects in South Leicestershire. Tell us about your building project or planning enquiry.",
+      "Get in touch with Graham Harris Partnership about architectural services in South Leicestershire. Tell us about your building project or planning enquiry.",
   },
 };
 
@@ -31,7 +31,7 @@ const jsonLd = {
   url: `${BASE_URL}/contact`,
   name: "Contact Graham Harris Partnership",
   description:
-    "Contact Graham Harris Partnership – architects in South Leicestershire – to discuss your building project, extension, planning permission, or building regulations enquiry.",
+    "Contact Graham Harris Partnership about architectural services in South Leicestershire, building projects, extensions, planning permission, or building regulations.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
   about: {
     "@type": "ProfessionalService",

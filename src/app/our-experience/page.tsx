@@ -5,21 +5,21 @@ const BASE_URL = "https://www.grahamharrispartnership.co.uk";
 export const metadata: Metadata = {
   title: "Our Experience",
   description:
-    "Graham Harris Partnership – experienced architects in South Leicestershire. Extensions, new houses, barn conversions, listed buildings, loft conversions, and commercial projects.",
+    "Architectural services and project experience in South Leicestershire: house extensions, new homes, barn conversions, listed buildings, loft conversions, and commercial projects.",
   alternates: {
     canonical: `${BASE_URL}/our-experience`,
   },
   openGraph: {
     title: "Our Experience | Graham Harris Partnership Ltd.",
     description:
-      "Experienced architects in South Leicestershire. Extensions, new houses, barn conversions, listed buildings, loft conversions, and commercial projects.",
+      "Explore our architectural services and project experience in South Leicestershire, from home extensions and new homes to listed buildings and commercial projects.",
     url: `${BASE_URL}/our-experience`,
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Experience | Graham Harris Partnership Ltd.",
     description:
-      "Experienced architects in South Leicestershire. Extensions, new houses, barn conversions, listed buildings, loft conversions, and commercial projects.",
+      "Explore our architectural services and project experience in South Leicestershire, from home extensions and new homes to listed buildings and commercial projects.",
   },
 };
 
@@ -30,7 +30,7 @@ const jsonLd = {
   url: `${BASE_URL}/our-experience`,
   name: "Our Experience – Graham Harris Partnership",
   description:
-    "Graham Harris Partnership has extensive experience as architects in South Leicestershire, covering house extensions, new homes, barn conversions, listed buildings, loft conversions, and a wide range of domestic and commercial projects.",
+    "Graham Harris Partnership has extensive experience delivering architectural services in South Leicestershire, including house extensions, new homes, barn conversions, listed buildings, loft conversions, and domestic and commercial projects.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
   about: {
     "@type": "ProfessionalService",

@@ -2,36 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const BASE_URL = "https://www.grahamharrispartnership.co.uk";
+const PAGE_URL = `${BASE_URL}/architectural-services-south-leicestershire`;
 
 export const metadata: Metadata = {
-  title: "Architects in South Leicestershire",
+  title: "Architectural Services in South Leicestershire",
   description:
-    "Graham Harris Partnership – architects in South Leicestershire. Family-run practice offering planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
+    "Graham Harris Partnership provides architectural services in South Leicestershire, including planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
   alternates: {
-    canonical: `${BASE_URL}/architects-south-leicestershire`,
+    canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Architects in South Leicestershire | Graham Harris Partnership Ltd.",
+    title: "Architectural Services in South Leicestershire | Graham Harris Partnership Ltd.",
     description:
-      "Family-run architects in South Leicestershire providing planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
-    url: `${BASE_URL}/architects-south-leicestershire`,
+      "Family-run architectural services in South Leicestershire, including planning permission drawings, building regulations, architectural design, and measured surveys.",
+    url: PAGE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Architects in South Leicestershire | Graham Harris Partnership Ltd.",
+    title: "Architectural Services in South Leicestershire | Graham Harris Partnership Ltd.",
     description:
-      "Family-run architects in South Leicestershire providing planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
+      "Family-run architectural services in South Leicestershire, including planning permission drawings, building regulations, architectural design, and measured surveys.",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": `${BASE_URL}/architects-south-leicestershire#webpage`,
-  url: `${BASE_URL}/architects-south-leicestershire`,
-  name: "Architects in South Leicestershire – Graham Harris Partnership",
+  "@id": `${PAGE_URL}#webpage`,
+  url: PAGE_URL,
+  name: "Architectural Services in South Leicestershire – Graham Harris Partnership",
   description:
-    "Graham Harris Partnership is a family-run architectural practice serving South Leicestershire including Market Harborough, Lutterworth, Oadby, Wigston, Blaby, and Hinckley.",
+    "Graham Harris Partnership provides architectural services across South Leicestershire, including Market Harborough, Lutterworth, Oadby, Wigston, Blaby, and Hinckley.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
   about: {
     "@type": "ProfessionalService",
@@ -39,7 +40,7 @@ const jsonLd = {
     url: BASE_URL,
     email: "info@grahamharrispartnership.co.uk",
     description:
-      "Family-run architectural practice in South Leicestershire providing planning permission drawings, building regulations drawings, architectural design and measured surveys.",
+      "Architectural services in South Leicestershire, including planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
     areaServed: [
       { "@type": "City", name: "Market Harborough" },
       { "@type": "City", name: "Lutterworth" },
@@ -66,7 +67,7 @@ const jsonLd = {
   },
 };
 
-export default function ArchitectsSouthLeicestershirePage() {
+export default function ArchitecturalServicesSouthLeicestershirePage() {
   return (
     <>
       <script
@@ -75,33 +76,28 @@ export default function ArchitectsSouthLeicestershirePage() {
       />
       <article>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-700 mb-8">
-          Architects in South Leicestershire
+          Architectural Services in South Leicestershire
         </h1>
 
         <p className="text-gray-700 mb-6">
-          Graham Harris Partnership is a family-run architectural practice based
-          in South Leicestershire, offering a comprehensive range of professional
-          services for residential and small-scale commercial projects. With
-          decades of experience working across the region, we understand the local
-          planning landscape and building requirements that are unique to this
-          part of the East Midlands.
+          Graham Harris Partnership is a family-run provider of architectural
+          services in South Leicestershire, supporting residential and
+          small-scale commercial projects. With decades of experience across
+          the region, we understand local planning and building requirements.
         </p>
 
         <p className="text-gray-700 mb-8">
-          As established architects in South Leicestershire, we take pride in
-          delivering practical, creative design solutions tailored to the
-          individual needs of each client. Whether you are planning a simple
-          house alteration or a complete new build, our team provides the
-          professional guidance and detailed drawings needed to bring your
-          project to life.
+          We provide practical, creative design solutions tailored to each
+          client. Whether you are planning a house alteration or a new build, we
+          can provide professional guidance and detailed drawings to help bring
+          your project to life.
         </p>
 
         <h2 className="text-lg font-bold text-gray-700 mb-4">
           Architectural Services We Offer
         </h2>
         <p className="text-gray-700 mb-4">
-          Our practice covers the full scope of architectural services required
-          for domestic and small commercial projects:
+          Our services cover domestic and small commercial projects, including:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
           <li>
@@ -148,8 +144,8 @@ export default function ArchitectsSouthLeicestershirePage() {
           Typical Residential Projects
         </h2>
         <p className="text-gray-700 mb-4">
-          As architects in South Leicestershire, we regularly work on a wide
-          variety of residential projects, including:
+          We regularly work on a wide variety of residential projects,
+          including:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
           <li>House extensions and full building remodelling</li>
@@ -161,9 +157,7 @@ export default function ArchitectsSouthLeicestershirePage() {
           <li>Garage and outbuilding conversions</li>
         </ul>
 
-        <h2 className="text-lg font-bold text-gray-700 mb-4">
-          Get in Touch
-        </h2>
+        <h2 className="text-lg font-bold text-gray-700 mb-4">Get in Touch</h2>
         <p className="text-gray-700 mb-4">
           If you are considering a building project in South Leicestershire,
           we would be happy to discuss your requirements. Please{" "}

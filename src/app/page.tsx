@@ -5,21 +5,21 @@ const BASE_URL = "https://www.grahamharrispartnership.co.uk";
 export const metadata: Metadata = {
   title: "Graham Harris Partnership",
   description:
-    "Graham Harris Partnership – Architects in South Leicestershire. Planning permission, building regulations, architectural drawings, and design consultation for residential and commercial projects.",
+    "Graham Harris Partnership provides architectural services in South Leicestershire, including planning permission drawings, building regulations, architectural design, and measured surveys.",
   alternates: {
     canonical: `${BASE_URL}/`,
   },
   openGraph: {
     title: "Graham Harris Partnership",
     description:
-      "Professional architectural services in South Leicestershire including planning permission, building regulations, and design consultation.",
+      "Professional architectural services in South Leicestershire, including planning permission, building regulations, and design consultation.",
     url: `${BASE_URL}/`,
   },
   twitter: {
     card: "summary_large_image",
     title: "Graham Harris Partnership",
     description:
-      "Professional architectural services in South Leicestershire including planning permission, building regulations, and design consultation.",
+      "Professional architectural services in South Leicestershire, including planning permission, building regulations, and design consultation.",
   },
 };
 
@@ -28,9 +28,9 @@ const jsonLd = {
   "@type": "WebPage",
   "@id": `${BASE_URL}/#webpage`,
   url: `${BASE_URL}/`,
-  name: "Graham Harris Partnership – Architects in South Leicestershire",
+  name: "Graham Harris Partnership – Architectural Services in South Leicestershire",
   description:
-    "Family-run architectural practice in South Leicestershire providing planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
+    "Graham Harris Partnership provides architectural services in South Leicestershire, including planning permission drawings, building regulations drawings, architectural design, and measured surveys.",
   isPartOf: { "@id": `${BASE_URL}/#website` },
   about: {
     "@type": "ProfessionalService",

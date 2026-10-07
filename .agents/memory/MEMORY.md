@@ -1,0 +1,1 @@
+- [SEO terminology](seo-terminology.md) — Do not describe the business or its people as architects; “architectural services” is acceptable.
